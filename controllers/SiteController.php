@@ -15,10 +15,11 @@ use app\models\SignUp;
 
 class SiteController extends Controller
 {
+     public $layout = 'main';
     /**
      * {@inheritdoc}
      */
-    public function behaviors()
+            function behaviors()
     {
         return [
             'access' => [
@@ -125,7 +126,7 @@ class SiteController extends Controller
 ###Registration###
 public function actionReg(){
     $model = new SignUp();
-    if($model->password == $_POST['passwordConf']){
+    
         if(isset($_POST['SignUp'])){
             $model->attributes =  Yii::$app->request->post('SignUp');
             if($model->validate() && $model->signup()){
@@ -134,7 +135,7 @@ public function actionReg(){
                 return $this->redirect(['/site/login']);
             }
         }
-    }
+    
     
     return $this->render('reg', ['model' => $model]);
 }

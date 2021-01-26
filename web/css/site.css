@@ -8,6 +8,7 @@ body {
     height: auto;
     margin: 0 auto -60px;
     padding: 0 0 60px;
+    
 }
 
 .wrap > .container {
@@ -113,3 +114,4 @@ a.desc:after {
 .nav > li > form > button.logout:focus {
     outline: none;
 }
+

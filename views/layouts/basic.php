@@ -34,48 +34,34 @@ AppAsset::register($this);
 <div class="container-fluid">
     <div class="row">
          <div class="col-sm">
-            <nav  class="navbar">
-                <ul class="nav">
-                    <a class="navbar-brand" href="http://witcher/web/">
-                    <img src="/web/upload/icon/icon.png" alt="logo">
-                    </a>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="http://witcher/web/">Главная</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Новости</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Сериал</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Анимации</a>
-                    </li>
-                </ul>
-            </nav>
+                <nav  class="navbar">
+                    <ul class="nav">
+                        <a class="navbar-brand" href="<?php Yii::$app->homeUrl ?>">
+                        <img src="/web/upload/icon/icon.png" alt="logo">
+                        </a>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Главная</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Новости</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Сериал</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Анимации</a>
+                        </li>
+                    </ul>
+                </nav>
         </div>
         <div class="col-sm">
             <ul class="nav justify-content-end">
-            <?php if( Yii::$app->user->isGuest){
-            echo '
             <li class="nav-item">
-                <a class="nav-link" href="/web/site/reg">Регистрация</a>
+                <a class="nav-link" href="#">Регистрация</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/web/site/login">Войти</a>
-            </li>';
-            }else{
-            echo  '<li>'
-                . Html::beginForm(['/site/logout'], 'post')
-                . Html::submitButton(
-                    'Выход (' . Yii::$app->user->identity->username . ')',
-                    ['class' => 'btn btn-link']
-                )
-                . Html::endForm()
-                . '</li>';
-            }
-            ?>
-           
+                <a class="nav-link" href="/site/login">Войти</a>
+            </li>
             </ul>
         </div>
     </div>
